@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 
+from grafo.grafo import Grafo
 from matriz import existe_sujeira, CORES_MATRIZ
+from utils import pegar_vertices, definir_caminho
 
 
 def gerar_caminho_objetivo():
@@ -32,8 +34,8 @@ def exibir_caminho_objetivo(matriz):
 
     posAPAx = 1
     posAPAy = 1
-
-    caminho_objetivo = gerar_caminho_objetivo()
+    caminho_dijkstra = Grafo((pegar_vertices(matriz))).definir_menor_caminho()
+    caminho_objetivo = definir_caminho(caminho_dijkstra)
 
     while existe_sujeira(matriz):
         for (x, y) in caminho_objetivo:
