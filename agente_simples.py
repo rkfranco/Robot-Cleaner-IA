@@ -3,25 +3,23 @@ import matplotlib.pyplot as plt
 from matriz import CORES_MATRIZ
 
 
-def gerar_caminho_simples():
-    caminho = [
-        (1, 1),
-        (2, 1),
-        (3, 1),
-        (4, 1),
-        (4, 2),
-        (4, 3),
-        (4, 4),
-        (3, 4),
-        (3, 3),
-        (3, 2),
-        (2, 2),
-        (2, 3),
-        (2, 4),
-        (1, 4),
-        (1, 3),
-        (1, 2),
-    ]
+def gerar_caminho_simples(matriz):
+    caminho = []
+    linhas = len(matriz) - 1
+    colunas = len(matriz[0]) - 1
+
+    for linha in range(1, linhas):
+        if linha % 2 != 0:
+            for coluna in range(1, colunas):
+                caminho.append((linha, coluna))
+        else:
+            for coluna in range(1, colunas)[::-1]:
+                caminho.append((linha, coluna))
+
+    caminho_reverso = caminho[::-1]
+    caminho_reverso.pop(0)  # remover primeiro
+    caminho_reverso.pop()  # remover ultimo
+    caminho.extend(caminho_reverso)
 
     return caminho
 
@@ -33,7 +31,7 @@ def exibir_caminho_simples(matriz):
     posAPAx = 1
     posAPAy = 1
 
-    caminho_simples = gerar_caminho_simples()
+    caminho_simples = gerar_caminho_simples(matriz)
 
     while True:
         for (x, y) in caminho_simples:
