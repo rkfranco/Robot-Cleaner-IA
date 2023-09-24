@@ -30,6 +30,5 @@ def definir_caminho(vertices):
                 else:
                     y -= 1
                 caminho_detalhado.append([x, y])
-    print(len(caminho_detalhado))
     return caminho_detalhado
 

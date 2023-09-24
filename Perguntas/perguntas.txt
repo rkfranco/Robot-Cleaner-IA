@@ -1,0 +1,5 @@
+A) A sua solução é extensível para um mundo 3 x 3? E para um mundo 6 x 6? Explique sua resposta.
+R: A nossa solução é extensível, já que o caminho é definido através da iteração de loop baseados no tamanho da matriz informada.
+
+B) É possível ter todo o espaço limpo efetivamente? Justifique sua resposta.
+R: Sim, uma vez que os pontos onde há sujeira são passados para o método onde é montado o caminho para o robô seguir, este irá percorrer e limpar todos os pontos informados.

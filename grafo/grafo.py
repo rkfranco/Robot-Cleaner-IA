@@ -12,7 +12,6 @@ def tratar_caminho(vertices, distancia):
         index = menor_distancia(distancia, vertices)
         resposta.append(vertices[index])
         vertices[index].definir_lido(True)
-    print(resposta)
     return resposta
 
 
