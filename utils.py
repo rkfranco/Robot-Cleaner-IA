@@ -4,8 +4,8 @@ from grafo.vertice import Vertice
 def pegar_vertices(matriz):
     vertices = []
     indice = 0
-    for i in range(6):
-        for j in range(6):
+    for i in range(len(matriz)):
+        for j in range(len(matriz[0])):
             if matriz[i][j] == 2:
                 vertices.append(Vertice(i, j, indice))
                 indice += 1
@@ -31,4 +31,3 @@ def definir_caminho(vertices):
                     y -= 1
                 caminho_detalhado.append([x, y])
     return caminho_detalhado
-
